@@ -1,8 +1,12 @@
 import express from 'express';
+import routes from "./routes/index";
 
+// .env, cross platoform, node env
 const port = 3000;
 
 const app = express();
+
+app.use("/api", routes);
 
 app.listen(port, () => {
   console.log(
