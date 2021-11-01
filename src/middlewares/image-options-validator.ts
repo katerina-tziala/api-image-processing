@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { ImageFormat, getDimension } from "../modules/images/images.module";
 
 const MIN_IMAGE_DIMENSION = 20;
+const MAX_IMAGE_DIMENSION = 4000;
 
 export function imageOptionsValidator(
   req: Request,
@@ -60,10 +61,10 @@ function checkDimensions(
 ): string[] {
   const invalidParams: string[] = [];
   if (!imageDimensionValid(width)) {
-    invalidParams.push("image width must be greater than 20");
+    invalidParams.push(`image width must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`);
   }
   if (!imageDimensionValid(height)) {
-    invalidParams.push("image height must be greater than 20");
+    invalidParams.push(`image height must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`);
   }
   return invalidParams;
 }
@@ -72,5 +73,5 @@ function imageDimensionValid(value: number | undefined): boolean {
   if (typeof value !== "number") {
     return true;
   }
-  return MIN_IMAGE_DIMENSION <= value;
+  return MIN_IMAGE_DIMENSION <= value && value <= MAX_IMAGE_DIMENSION;
 }

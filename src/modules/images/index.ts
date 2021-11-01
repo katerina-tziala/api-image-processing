@@ -7,7 +7,7 @@ import { generateThumbName } from "./utils";
 import path from "path";
 
 const SRC_PATH = path.normalize("./assets/images/src/");
-const THUMBS_PATH = path.normalize("./assets/images/thumbs/");
+const THUMBS_PATH = path.normalize("./assets/images/thumb/");
 
 export async function getThumbPath(
   options: ImageOptions
