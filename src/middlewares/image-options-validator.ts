@@ -1,8 +1,9 @@
 import { Request, Response } from 'express';
 import { ImageFormat, getDimension } from '../modules/images/images.module';
+import { CONFIG } from '../config/config';
 
-const MIN_IMAGE_DIMENSION = 20;
-const MAX_IMAGE_DIMENSION = 4000;
+const MIN_IMAGE_DIMENSION = CONFIG.MAX_IMAGE_DIMENSION;
+const MAX_IMAGE_DIMENSION = CONFIG.MAX_IMAGE_DIMENSION;
 
 export function imageOptionsValidator(
   req: Request,
@@ -72,6 +73,7 @@ function checkDimensions(
   }
   return invalidParams;
 }
+
 
 function imageDimensionValid(value: number | undefined): boolean {
   if (typeof value !== 'number') {

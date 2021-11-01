@@ -3,11 +3,10 @@ import { promises as fsAsync } from 'fs';
 import sharp, { FormatEnum } from 'sharp';
 import { ImageFormat, ImageOptions } from './image.types';
 import { generateThumbName } from './utils';
+import { CONFIG } from '../../config/config';
 
-import path from 'path';
-
-const SRC_PATH = path.normalize('./assets/images/src/');
-const THUMBS_PATH = path.normalize('./assets/images/thumb/');
+const SRC_PATH = CONFIG.SRC_IMAGES;
+const THUMBS_PATH = CONFIG.THUMB_IMAGES;
 
 export async function getThumbPath(options: ImageOptions): Promise<string> {
   const thumbName = generateThumbName(options);
