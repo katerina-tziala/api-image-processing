@@ -3,9 +3,8 @@ import images from './api/images';
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-  //do something
-  res.send('connected');
+routes.get('/', (_, res) => {
+  res.send('image processing api running');
 });
 
 routes.use('/images', images);

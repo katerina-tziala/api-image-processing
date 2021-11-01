@@ -17,3 +17,10 @@ To check the code consistensy to the chosen coding style run ```npm run prettier
 
 To apply the chosen coding style run ```npm run prettier```.
 To lint the app run ```npm run lint```.
+
+
+## Future Improvements 
+
+1. Create a front-end for uploading more images to the full-size directory.
+2. Create a front-end that displays a thumbnail directory.
+3. Create a front-end that allows for the selection of how to process a selected image.
