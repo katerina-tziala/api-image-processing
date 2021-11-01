@@ -13,6 +13,8 @@ app.use(cors());
 app.use('/api', routes);
 
 app.listen(port, () => {
+  // prettier-ignore
+  // eslint-disable-next-line
   console.log(
     '\x1b[36m%s\x1b[0m',
     `Server started at http://localhost:${port}`

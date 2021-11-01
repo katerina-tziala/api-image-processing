@@ -9,9 +9,7 @@ import path from 'path';
 const SRC_PATH = path.normalize('./assets/images/src/');
 const THUMBS_PATH = path.normalize('./assets/images/thumb/');
 
-export async function getThumbPath(
-  options: ImageOptions
-): Promise<string | {}> {
+export async function getThumbPath(options: ImageOptions): Promise<string> {
   const thumbName = generateThumbName(options);
   const thumbPath = `${THUMBS_PATH}${thumbName}`;
   const thumbExists = imageExists(thumbPath);
@@ -39,7 +37,7 @@ async function getImagesList(directory = SRC_PATH): Promise<string[]> {
 async function createThumb(
   options: ImageOptions,
   thumbPath: string
-): Promise<string | {}> {
+): Promise<string> {
   const srcImage = await getSourceImage(options.name);
   if (!srcImage) {
     throw new Error('image-not-found');
