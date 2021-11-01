@@ -1,14 +1,23 @@
-import { Request } from "express";
+import { Request } from 'express';
 import { ImageFormat, ImageOptions } from './image.types';
 
 export function generateThumbName(options: ImageOptions): string {
-  const dimensionsExtension = getDimensionsExtension(options.width, options.height);
+  const dimensionsExtension = getDimensionsExtension(
+    options.width,
+    options.height
+  );
   const rotationExtension = options.rotate ? `-deg(${options.rotate})` : '';
-  const transformationExtension = getTransformationExtension(options.flip, options.flop);
+  const transformationExtension = getTransformationExtension(
+    options.flip,
+    options.flop
+  );
   return `thumb-${options.name}${dimensionsExtension}${rotationExtension}${transformationExtension}.${options.format}`;
 }
 
-function getDimensionsExtension(width: number | undefined, height: number | undefined): string {
+function getDimensionsExtension(
+  width: number | undefined,
+  height: number | undefined
+): string {
   const extensionParts: string[] = [];
   if (width) {
     extensionParts.push(`w${width}`);

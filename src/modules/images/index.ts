@@ -1,13 +1,13 @@
-import * as fs from "fs";
-import { promises as fsAsync } from "fs";
-import sharp, { FormatEnum } from "sharp";
-import { ImageFormat, ImageOptions } from "./image.types";
-import { generateThumbName } from "./utils";
+import * as fs from 'fs';
+import { promises as fsAsync } from 'fs';
+import sharp, { FormatEnum } from 'sharp';
+import { ImageFormat, ImageOptions } from './image.types';
+import { generateThumbName } from './utils';
 
-import path from "path";
+import path from 'path';
 
-const SRC_PATH = path.normalize("./assets/images/src/");
-const THUMBS_PATH = path.normalize("./assets/images/thumb/");
+const SRC_PATH = path.normalize('./assets/images/src/');
+const THUMBS_PATH = path.normalize('./assets/images/thumb/');
 
 export async function getThumbPath(
   options: ImageOptions
@@ -24,7 +24,7 @@ function imageExists(imagePath: string): boolean {
 
 async function getSourceImage(name: string): Promise<string | undefined> {
   const sourceImages = await getImagesList(SRC_PATH);
-  return sourceImages.find((srcImage) => srcImage.match(name));
+  return sourceImages.find(srcImage => srcImage.match(name));
 }
 
 async function getImagesList(directory = SRC_PATH): Promise<string[]> {
@@ -42,7 +42,7 @@ async function createThumb(
 ): Promise<string | {}> {
   const srcImage = await getSourceImage(options.name);
   if (!srcImage) {
-    throw new Error("image-not-found");
+    throw new Error('image-not-found');
   }
 
   const srcPath = `${SRC_PATH}${srcImage}`;
@@ -77,6 +77,6 @@ async function generateThumb(
       .toFile(thumbPath);
     return thumbPath;
   } catch (error) {
-    throw new Error("image-could-not-be-processed");
+    throw new Error('image-could-not-be-processed');
   }
 }

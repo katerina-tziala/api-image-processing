@@ -1,13 +1,13 @@
-import express from "express";
-import images from "./api/images";
+import express from 'express';
+import images from './api/images';
 
 const routes = express.Router();
 
-routes.get("/", (req, res) => {
+routes.get('/', (req, res) => {
   //do something
-  res.send("connected");
+  res.send('connected');
 });
 
-routes.use("/images", images);
+routes.use('/images', images);
 
 export default routes;

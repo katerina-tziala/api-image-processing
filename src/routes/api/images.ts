@@ -1,12 +1,18 @@
-import express from "express";
-import * as fs from "fs";
-import { getThumbPath, getImageOptionsFromQuery } from "../../modules/images/images.module";
-import { handleRequestError, getMimeType } from "../../utilities/utilities.module";
-import { imageOptionsValidator } from "../../middlewares/middlewares.module";
+import express from 'express';
+import * as fs from 'fs';
+import {
+  getThumbPath,
+  getImageOptionsFromQuery
+} from '../../modules/images/images.module';
+import {
+  handleRequestError,
+  getMimeType
+} from '../../utilities/utilities.module';
+import { imageOptionsValidator } from '../../middlewares/middlewares.module';
 
 const images = express.Router();
 
-images.get("/", imageOptionsValidator, async (req, res) => {
+images.get('/', imageOptionsValidator, async (req, res) => {
   const options = getImageOptionsFromQuery(req);
   try {
     const thumbPath = await getThumbPath(options);

@@ -1,8 +1,8 @@
-import { Response } from "express";
+import { Response } from 'express';
 
 enum ResponseStatusEnum {
-  "image-not-found" = 404,
-  "image-could-not-be-processed" = 500,
+  'image-not-found' = 404,
+  'image-could-not-be-processed' = 500
 }
 
 export function handleRequestError(res: Response, error: Error): void {

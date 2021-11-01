@@ -6,7 +6,7 @@ export enum ImageFormat {
   png = 'png',
   svg = 'svg',
   tiff = 'tiff',
-  webp = 'webp',
+  webp = 'webp'
 }
 
 export interface ImageOptions {

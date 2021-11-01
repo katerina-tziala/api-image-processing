@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { ImageFormat, getDimension } from "../modules/images/images.module";
+import { Request, Response } from 'express';
+import { ImageFormat, getDimension } from '../modules/images/images.module';
 
 const MIN_IMAGE_DIMENSION = 20;
 const MAX_IMAGE_DIMENSION = 4000;
@@ -34,7 +34,7 @@ function sendInvalidParamsResponse(
   res: Response,
   invalidParams: string[]
 ): void {
-  res.status(400).send(invalidParams.join(", "));
+  res.status(400).send(invalidParams.join(', '));
 }
 
 function checkRequiredParams(
@@ -44,12 +44,12 @@ function checkRequiredParams(
   const invalidParams: string[] = [];
 
   if (!name?.length) {
-    invalidParams.push("image name must be defined");
+    invalidParams.push('image name must be defined');
   }
 
   const allowedFormats: string[] = Object.keys(ImageFormat);
   if (!format || !allowedFormats.includes(format)) {
-    invalidParams.push(`format must be one of ${allowedFormats.join(", ")}`);
+    invalidParams.push(`format must be one of ${allowedFormats.join(', ')}`);
   }
 
   return invalidParams;
@@ -61,16 +61,20 @@ function checkDimensions(
 ): string[] {
   const invalidParams: string[] = [];
   if (!imageDimensionValid(width)) {
-    invalidParams.push(`image width must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`);
+    invalidParams.push(
+      `image width must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`
+    );
   }
   if (!imageDimensionValid(height)) {
-    invalidParams.push(`image height must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`);
+    invalidParams.push(
+      `image height must be greater than ${MIN_IMAGE_DIMENSION} and less than ${MAX_IMAGE_DIMENSION}`
+    );
   }
   return invalidParams;
 }
 
 function imageDimensionValid(value: number | undefined): boolean {
-  if (typeof value !== "number") {
+  if (typeof value !== 'number') {
     return true;
   }
   return MIN_IMAGE_DIMENSION <= value && value <= MAX_IMAGE_DIMENSION;
