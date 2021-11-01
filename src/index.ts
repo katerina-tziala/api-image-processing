@@ -1,11 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-
 import routes from './routes/index';
 import { CONFIG } from './config/config';
 
-
-// Add in logging to record when images are processed or accessed
 // Write relevant unit tests with Jasmine and SuperTest to improve code quality and refactoring
 // Test script runs and all tests created pass.
 // There is at least 1 test per endpoint and at least one test for image processing.

@@ -4,7 +4,7 @@ import sharp, { FormatEnum } from 'sharp';
 import { ImageFormat, ImageOptions } from './image.types';
 import { generateThumbName } from './utils';
 import { CONFIG } from '../../config/config';
-
+import { writeLogs } from './logs';
 const SRC_PATH = CONFIG.SRC_IMAGES;
 const THUMBS_PATH = CONFIG.THUMB_IMAGES;
 
@@ -12,7 +12,11 @@ export async function getThumbPath(options: ImageOptions): Promise<string> {
   const thumbName = generateThumbName(options);
   const thumbPath = `${THUMBS_PATH}${thumbName}`;
   const thumbExists = imageExists(thumbPath);
-  return thumbExists ? thumbPath : createThumb(options, thumbPath);
+  if (thumbExists) {
+    writeLogs(thumbName, false);
+    return thumbPath;
+  }
+  return createThumb(options, thumbPath);
 }
 
 function imageExists(imagePath: string): boolean {
@@ -72,6 +76,7 @@ async function generateThumb(
       .resize({ width, height, background })
       .toFormat(thumbFormat)
       .toFile(thumbPath);
+      writeLogs(thumbPath.replace(THUMBS_PATH, ''), true);
     return thumbPath;
   } catch (error) {
     throw new Error('image-could-not-be-processed');

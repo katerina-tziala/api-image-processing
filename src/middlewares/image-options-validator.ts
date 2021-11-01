@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { ImageFormat, getDimension } from '../modules/images/images.module';
 import { CONFIG } from '../config/config';
 
-const MIN_IMAGE_DIMENSION = CONFIG.MAX_IMAGE_DIMENSION;
+const MIN_IMAGE_DIMENSION = CONFIG.MIN_IMAGE_DIMENSION;
 const MAX_IMAGE_DIMENSION = CONFIG.MAX_IMAGE_DIMENSION;
 
 export function imageOptionsValidator(
