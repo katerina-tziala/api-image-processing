@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.6",
+    "@types/sharp": "^0.29.2",
     "nodemon": "^2.0.14",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
