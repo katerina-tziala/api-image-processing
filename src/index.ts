@@ -16,7 +16,7 @@ app.use(cors());
 app.use('/api', routes);
 
 app.get('/', (_, res) => {
-  res.status(200).send(`Server started at ${startedAt}`);
+  res.status(200).send(`Server up and running. Server started at ${startedAt}`);
 });
 
 app.listen(CONFIG.PORT, () => {
