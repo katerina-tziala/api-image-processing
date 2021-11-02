@@ -9,6 +9,35 @@ An API for image processing that can be used in two different ways:
 
 Node version >= 12.13.0
 
+## Running the App
+
+1. Fork and clone this repository.
+
+2. To install the dependencies of the app, run  in the project directory:
+
+    ```
+    npm install
+    ```
+
+    or
+
+    ```
+    npm i
+    ```
+    
+
+3. To start the app, run  in the project directory:
+
+    ```
+    npm run start
+    ``` 
+
+4. Access the app locally at: http://localhost:3000/
+
+
+
+
+
 
 ## Code Quality
 The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files.
