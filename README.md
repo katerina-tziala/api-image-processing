@@ -5,8 +5,6 @@ An API for image processing (resize, rotate, flip, flop and convert the image fo
 1. As a **_simple placeholder API_** for rapid prototyping that allows you to place images into your frontend with the stylization you prefer via URL parameters.
 2. As a **_library_** to serve properly processed and scaled versions of your images to the frontend to reduce page load size.
 
-The API can resize, rotate, flip, flop and convert the image format.
-
 ## Prerequisites
 
 Node version >= 12.13.0
@@ -61,7 +59,7 @@ When accessing this endpoint, the server responds with status 200 and a message 
 
 The images endpoint can be accessed at http://localhost:3000/api/images.
 
-*** Query Params ***
+***Query Params***
 
 | key    | description                                                         |
 | ------ | ------------------------------------------------------------------- |
@@ -91,7 +89,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
    - For each one of the dimensions, when specified must take values in the range 20 - 3000
 
-*** Possible Errors ***
+***Possible Errors***
 
 | Error Code                | description                                                         |
 | ------------------------- | ------------------------------------------------------------------- |
