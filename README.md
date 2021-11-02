@@ -35,27 +35,33 @@ Here’s a high level list of the technologies used for this app:
 
 ## Code Quality and Testing
 
-The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files.
+The commands to check the code quality and test the api must be run in the project directory.
 
-To check the code consistensy to the chosen coding style run in the project directory `npm run prettier-check`.
+### Code Quality
 
-To apply the chosen coding style run in the project directory `npm run prettier`.
+The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files. 
 
-To lint the app run in the project directory `npm run lint`.
+To check the code consistensy to the chosen coding style run `npm run prettier-check`.
+
+To apply the chosen coding style run `npm run prettier`.
+
+To lint the app run `npm run lint`.
+
+### Testing
 
 To test the app run in the project directory `npm run test`.
 
 ## API Usage
 
-The server is running at http://localhost:3000.
-When accessing this endpoint, the server responds with status 200 and a message that the server is up and running providing the timestamp that the server started.
+The server is running at http://localhost:3000.  
+When accessing this endpoint, the server responds with status 200 and a message that the server is up and running providing the timestamp that the server started.  
 
-The API is running at http://localhost:3000/api.
-When accessing this endpoint, the server responds with status 200 and a message that the API is listening.
+The API is running at http://localhost:3000/api.  
+When accessing this endpoint, the server responds with status 200 and a message that the API is listening.  
 
 The images endpoint can be accessed at http://localhost:3000/api/images.
 
-**_ Query Params _**
+*** Query Params ***
 
 | key    | description                                                         |
 | ------ | ------------------------------------------------------------------- |
@@ -85,7 +91,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
    - For each one of the dimensions, when specified must take values in the range 20 - 3000
 
-**_ Possible Errors _**
+*** Possible Errors ***
 
 | Error Code                | description                                                         |
 | ------------------------- | ------------------------------------------------------------------- |
