@@ -102,3 +102,6 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 1. Create a front-end for uploading more images to the full-size directory.
 2. Create a front-end that displays a thumbnail directory.
 3. Create a front-end that allows for the selection of how to process a selected image.
+
+## ATTRIBUTIONS
+All images were provided by [Udacity](https://www.udacity.com/) no rights claimed.
