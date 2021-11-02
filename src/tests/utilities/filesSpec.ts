@@ -10,7 +10,7 @@ describe('Test the checkDirectory function', () => {
     await removeDirectory(directory);
   });
 
-  it(`should create directory 'foo' when it does not exist`, async () => {
+  it('should create directory "foo" when it does not exist', async () => {
     expect(fs.existsSync(directory)).toEqual(false);
     await checkDirectory(directory);
     expect(fs.existsSync(directory)).toEqual(true);

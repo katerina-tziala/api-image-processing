@@ -29,11 +29,11 @@ describe('Test the getRotationDegrees function: ', () => {
     expect(getRotationDegrees(undefined)).toBe(0);
   });
 
-  it(`returns 0 when parameter is passed as 'foo'`, () => {
+  it('returns 0 when parameter is passed as "foo"', () => {
     expect(getRotationDegrees('foo')).toBe(0);
   });
 
-  it(`returns 20 when parameter is passed as '20'`, () => {
+  it('returns 20 when parameter is passed as "20"', () => {
     expect(getRotationDegrees('20')).toBe(20);
   });
 });
@@ -42,10 +42,10 @@ describe('Test the getDimension function: ', () => {
   it('returns undefined when parameter is not defined', () => {
     expect(getDimension(undefined)).toBeUndefined();
   });
-  it(`returns undefined when parameter is passed as 'foo'`, () => {
+  it('returns undefined when parameter is passed as "foo"', () => {
     expect(getDimension('foo')).toBeUndefined();
   });
-  it(`returns 25 when parameter is passed as '25.8'`, () => {
+  it('returns 25 when parameter is passed as "25.8"', () => {
     expect(getDimension('25.8')).toBe(25);
   });
 });

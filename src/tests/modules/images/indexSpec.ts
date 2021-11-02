@@ -26,7 +26,7 @@ const removeThumbsDirectory = async () => {
 describe('Test generateThumb function', () => {
   beforeAll(async (): Promise<void> => removeThumbsDirectory());
 
-  it(`rejects the process with image-could-not-be-processed if original image does not exist`, async (): Promise<void> => {
+  it('rejects the process with image-could-not-be-processed if original image does not exist', async (): Promise<void> => {
     const error = new Error('image-could-not-be-processed');
     await expectAsync(
       images.generateThumb(
@@ -37,7 +37,7 @@ describe('Test generateThumb function', () => {
     ).toBeRejectedWith(error);
   });
 
-  it(`rejects the process with image-could-not-be-processed if path for thumb is not correct`, async (): Promise<void> => {
+  it('rejects the process with image-could-not-be-processed if path for thumb is not correct', async (): Promise<void> => {
     const error = new Error('image-could-not-be-processed');
     await expectAsync(
       images.generateThumb(
@@ -48,7 +48,7 @@ describe('Test generateThumb function', () => {
     ).toBeRejectedWith(error);
   });
 
-  it(`rejects the process with image-could-not-be-processed if thumbs folder does not exist`, async (): Promise<void> => {
+  it('rejects the process with image-could-not-be-processed if thumbs folder does not exist', async (): Promise<void> => {
     const error = new Error('image-could-not-be-processed');
     await expectAsync(
       images.generateThumb(
@@ -77,7 +77,7 @@ describe('Test generateThumb function', () => {
 describe('Test createThumb function', () => {
   beforeAll(async (): Promise<void> => removeThumbsDirectory());
 
-  it(`rejects the process with image-could-not-be-processed if original image does not exist`, async (): Promise<void> => {
+  it('rejects the process with image-could-not-be-processed if original image does not exist', async (): Promise<void> => {
     const error = new Error('image-not-found');
     const optionsForError: ImageOptions = { ...options };
     optionsForError.name = 'foo';

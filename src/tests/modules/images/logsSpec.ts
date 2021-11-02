@@ -22,13 +22,13 @@ describe('Test the writeLogs function', () => {
     expect(fs.existsSync(imageLogsPath)).toEqual(true);
   });
 
-  it(`should create line for processed thumb `, async () => {
+  it('should create line for processed thumb', async () => {
     await writeLogs(thumbTest, true);
     const content = await fsHelper.textFileContent(imageLogsPath);
     expect(content).toContain(`[Processed] ${thumbTest}`);
   });
 
-  it(`should create line for accessed thumb `, async () => {
+  it('should create line for accessed thumb', async () => {
     await writeLogs(thumbTest, false);
     const content = await fsHelper.textFileContent(imageLogsPath);
     expect(content).toContain(`[Accessed] ${thumbTest}`);

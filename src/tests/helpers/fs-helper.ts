@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { promises as fsAsync } from 'fs';
 import path from 'path';
 

@@ -8,7 +8,7 @@ app.use(routes);
 
 const request: supertest.SuperTest<supertest.Test> = supertest(app);
 
-const ENDPOINT_BASE = `/api/images`;
+const ENDPOINT_BASE = '/api/images';
 const ENDPOINT_WITH_EXISTING_IMAGE_NAME = `${ENDPOINT_BASE}?name=santamonica`;
 
 const clearThumbs = async () => {
