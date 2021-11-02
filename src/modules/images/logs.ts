@@ -1,21 +1,26 @@
 import { promises as fsAsync } from 'fs';
+import { checkDirectory } from '../../utilities/utilities.module';
 import { CONFIG } from '../../config/config';
 
-const LOGS_PATH = CONFIG.SERVER_LOGS;
-const logsFilePath = `${LOGS_PATH}thumbs-log.txt`;
+export const imageLogsPath = `${CONFIG.LOGS_DIRECTORY}thumbs-log.txt`;
 
-export async function writeLogs(thumbName: string, created: boolean): Promise<void> {
-  await checkPath();
+export async function writeLogs(
+  thumbName: string,
+  created: boolean
+): Promise<unknown> {
+  await checkDirectory(CONFIG.LOGS_DIRECTORY);
   const type = created ? 'Processed' : 'Accessed';
   const timestamp = new Date().toUTCString();
-  const logsFile = await fsAsync.open(logsFilePath, 'a+');
-  await logsFile.write(`\r\n [${type}] ${timestamp} - thumb: ${thumbName}`);
+  const data = `\r\n${timestamp} - [${type}] ${thumbName}`;
+  return await writeLogsData(data);
 }
 
-async function checkPath(): Promise<void> {
+async function writeLogsData(data: string): Promise<unknown> {
   try {
-    await fsAsync.access(LOGS_PATH);
+    const logsFile = await fsAsync.open(imageLogsPath, 'a+');
+    await logsFile.write(data);
+    return;
   } catch {
-    fsAsync.mkdir(LOGS_PATH);
+    return;
   }
 }

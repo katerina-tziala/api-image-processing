@@ -1,19 +1,6 @@
 import { Request } from 'express';
 import { ImageFormat, ImageOptions } from './image.types';
 
-export function generateThumbName(options: ImageOptions): string {
-  const dimensionsExtension = getDimensionsExtension(
-    options.width,
-    options.height
-  );
-  const rotationExtension = options.rotate ? `-deg(${options.rotate})` : '';
-  const transformationExtension = getTransformationExtension(
-    options.flip,
-    options.flop
-  );
-  return `thumb-${options.name}${dimensionsExtension}${rotationExtension}${transformationExtension}.${options.format}`;
-}
-
 function getDimensionsExtension(
   width: number | undefined,
   height: number | undefined
@@ -43,6 +30,23 @@ function mapExtensionParts(extensionParts: string[]): string {
   return extensionParts.length ? `-${extensionParts.join('-')}` : '';
 }
 
+function getImageFormat(formatType: string): ImageFormat {
+  return ImageFormat[formatType as keyof typeof ImageFormat];
+}
+
+export function generateThumbName(options: ImageOptions): string {
+  const dimensionsExtension = getDimensionsExtension(
+    options.width,
+    options.height
+  );
+  const rotationExtension = options.rotate ? `-deg(${options.rotate})` : '';
+  const transformationExtension = getTransformationExtension(
+    options.flip,
+    options.flop
+  );
+  return `thumb-${options.name}${dimensionsExtension}${rotationExtension}${transformationExtension}.${options.format}`;
+}
+
 export function getImageOptionsFromQuery(req: Request): ImageOptions {
   const name = req.query.name as unknown as string;
   const format = getImageFormat(req.query.format as unknown as string);
@@ -60,14 +64,10 @@ export function getImageOptionsFromQuery(req: Request): ImageOptions {
   };
 }
 
-function getImageFormat(formatType: string): ImageFormat {
-  return ImageFormat[formatType as keyof typeof ImageFormat];
-}
-
 export function getRotationDegrees(rotate: string | undefined): number {
-  return !rotate?.length ? 0 : parseInt(rotate);
+  return !rotate?.length ? 0 : parseInt(rotate) || 0;
 }
 
 export function getDimension(value: string | undefined): number | undefined {
-  return !value?.length ? undefined : parseInt(value);
+  return !value?.length ? undefined : parseInt(value) || undefined;
 }

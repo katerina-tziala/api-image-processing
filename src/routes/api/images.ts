@@ -5,8 +5,8 @@ import {
   getImageOptionsFromQuery
 } from '../../modules/images/images.module';
 import {
-  handleRequestError,
-  getMimeType
+  getErrorStatus,
+  getResponseType
 } from '../../utilities/utilities.module';
 import { imageOptionsValidator } from '../../middlewares/middlewares.module';
 
@@ -16,11 +16,13 @@ images.get('/', imageOptionsValidator, async (req, res) => {
   const options = getImageOptionsFromQuery(req);
   try {
     const thumbPath = await getThumbPath(options);
-    const type = getMimeType(options.format);
+    const type = getResponseType(options.format);
     res.type(type);
     fs.createReadStream(thumbPath as fs.PathLike).pipe(res);
   } catch (error) {
-    handleRequestError(res, error as Error);
+    const errorData = error as Error;
+    const status = getErrorStatus(errorData);
+    res.status(status).send(errorData.message);
   }
 });
 

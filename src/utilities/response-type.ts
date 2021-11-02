@@ -1,4 +1,4 @@
-enum ResponseMimeEnum {
+enum ResponseType {
   html = 'text/html',
   txt = 'text/plain',
   css = 'text/css',
@@ -9,6 +9,6 @@ enum ResponseMimeEnum {
   js = 'application/javascript'
 }
 
-export function getMimeType(type: string): string {
-  return ResponseMimeEnum[type as keyof typeof ResponseMimeEnum];
+export function getResponseType(type: string): string {
+  return ResponseType[type as keyof typeof ResponseType] || ResponseType.txt;
 }

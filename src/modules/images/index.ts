@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import { promises as fsAsync } from 'fs';
 import sharp, { FormatEnum } from 'sharp';
+import { checkDirectory } from '../../utilities/utilities.module';
 import { ImageFormat, ImageOptions } from './image.types';
 import { generateThumbName } from './utils';
 import { CONFIG } from '../../config/config';
@@ -37,7 +38,7 @@ async function getImagesList(directory = SRC_PATH): Promise<string[]> {
   }
 }
 
-async function createThumb(
+export async function createThumb(
   options: ImageOptions,
   thumbPath: string
 ): Promise<string> {
@@ -47,19 +48,11 @@ async function createThumb(
   }
 
   const srcPath = `${SRC_PATH}${srcImage}`;
-  await checkThumbPath();
+  await checkDirectory(THUMBS_PATH);
   return generateThumb(options, srcPath, thumbPath);
 }
 
-async function checkThumbPath(): Promise<void> {
-  try {
-    await fsAsync.access(THUMBS_PATH);
-  } catch {
-    fsAsync.mkdir(THUMBS_PATH);
-  }
-}
-
-async function generateThumb(
+export async function generateThumb(
   options: ImageOptions,
   srcPath: string,
   thumbPath: string
@@ -76,7 +69,7 @@ async function generateThumb(
       .resize({ width, height, background })
       .toFormat(thumbFormat)
       .toFile(thumbPath);
-      writeLogs(thumbPath.replace(THUMBS_PATH, ''), true);
+    writeLogs(thumbPath.replace(THUMBS_PATH, ''), true);
     return thumbPath;
   } catch (error) {
     throw new Error('image-could-not-be-processed');

@@ -4,7 +4,8 @@ import images from './api/images';
 const routes = express.Router();
 
 routes.get('/', (_, res) => {
-  res.status(200).send('image processing api running');
+  //text
+  res.status(200).send('Images API');
 });
 
 routes.use('/images', images);

@@ -10,7 +10,9 @@
     "lint": "eslint . --ext .ts",
     "build": "npm run clean-prod && npm run prettier && npx tsc",
     "start": "node dist/.",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine"
   },
   "repository": {
     "type": "git",
@@ -32,8 +34,10 @@
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.10.1",
     "@types/node": "^16.11.6",
     "@types/sharp": "^0.29.2",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
     "eslint": "^8.1.0",
@@ -49,6 +53,9 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "sharp": "^0.29.2"
+    "jasmine": "^3.10.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "sharp": "^0.29.2",
+    "supertest": "^6.1.6"
   }
 }

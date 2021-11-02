@@ -50,7 +50,7 @@ function checkRequiredParams(
 
   const allowedFormats: string[] = Object.keys(ImageFormat);
   if (!format || !allowedFormats.includes(format)) {
-    invalidParams.push(`format must be one of ${allowedFormats.join(', ')}`);
+    invalidParams.push(`format must be one of: ${allowedFormats.join(', ')}`);
   }
 
   return invalidParams;
@@ -73,7 +73,6 @@ function checkDimensions(
   }
   return invalidParams;
 }
-
 
 function imageDimensionValid(value: number | undefined): boolean {
   if (typeof value !== 'number') {

@@ -24,6 +24,8 @@ app.listen(CONFIG.PORT, () => {
   // eslint-disable-next-line
   console.log(
     '\x1b[36m%s\x1b[0m',
-    `Server started at http://localhost:${CONFIG.PORT}`
+    `Server running at http://localhost:${CONFIG.PORT}`
   );
 });
+
+export default app;
