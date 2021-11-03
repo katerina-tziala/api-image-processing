@@ -107,7 +107,7 @@ http://localhost:3000/api/images?name=santamonica&format=png&width=200&flop=true
 Will return a scaled, flipped horizontally and rotated by 45degrees png of the original image.
 
 <p align="center">
-    <img src="https://github.com/katerina-tziala/api-image-processing/blob/master/docs/thumb-santamonica-w200-deg(45)-flop.png" alt="thumb-santamonica-w200-deg(45)-flop" width="100%" height="auto">
+    <img src="https://github.com/katerina-tziala/api-image-processing/blob/master/docs/thumb-santamonica-w200-deg(45)-flop.png" alt="thumb-santamonica-w200-deg(45)-flop" width="auto" height="auto">
 </p>
 
 
@@ -117,7 +117,7 @@ http://localhost:3000/api/images?name=fjord&format=png&width=200&flip=true
 
 Will return a scaled and vertically flipped png of the original image.
 <p align="center">
-    <img src="https://github.com/katerina-tziala/api-image-processing/blob/master/docs/thumb-fjord-w200-flip.png" alt="thumb-fjord-w200-flip" width="100%" height="auto">
+    <img src="https://github.com/katerina-tziala/api-image-processing/blob/master/docs/thumb-fjord-w200-flip.png" alt="thumb-fjord-w200-flip" width="auto" height="auto">
 </p>
 
 ## Future Improvements
