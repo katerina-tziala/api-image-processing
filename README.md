@@ -71,8 +71,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 | flop   | **optional** If requested the image should be flipped vertically.   |
 | rotate | **optional** The rotation angle of the requested image.             |
 
-
-
+<br/>
 
 **_Possible Errors_**
 
