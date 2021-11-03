@@ -71,6 +71,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 | flop   | **optional** If requested the image should be flipped vertically.   |
 | rotate | **optional** The rotation angle of the requested image.             |
 
+
 **_Possible Errors_**
 
 | Error Code                | description                                         |
@@ -99,12 +100,12 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
 ### EXAMPLES
 
-**Example 1**
+**Example 1**  
 http://localhost:3000/api/images?name=santamonica&format=png&width=300&flop=true&rotate=45
 
 Will return a scaled, flipped horizontally and rotated by 45degrees png of the original image.
 
-**Example 2**
+**Example 2**  
 http://localhost:3000/api/images?name=fjord&format=png&width=300&flip=true
 
 Will return a scaled and vertically flipped png of the original image.
