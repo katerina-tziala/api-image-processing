@@ -53,7 +53,7 @@ describe('Test the query parameters in the images endpoint /api/images:', () => 
       );
       expect(response.status).toBe(400);
       expect(response.text).toMatch(
-        'image height must be greater than 20 and less than 4000'
+        `image height must be greater than ${CONFIG.MIN_IMAGE_DIMENSION} and less than ${CONFIG.MAX_IMAGE_DIMENSION}`
       );
     });
 
@@ -63,7 +63,7 @@ describe('Test the query parameters in the images endpoint /api/images:', () => 
       );
       expect(response.status).toBe(400);
       expect(response.text).toMatch(
-        'image width must be greater than 20 and less than 4000'
+        `image width must be greater than ${CONFIG.MIN_IMAGE_DIMENSION} and less than ${CONFIG.MAX_IMAGE_DIMENSION}`
       );
     });
   });

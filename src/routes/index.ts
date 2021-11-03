@@ -1,9 +1,9 @@
-import express from 'express';
+import express, { Response } from 'express';
 import images from './api/images';
 
 const routes = express.Router();
 
-routes.get('/', (_, res) => {
+routes.get('/', async (_, res: Response): Promise<void> => {
   res.status(200).send('API is listening...');
 });
 

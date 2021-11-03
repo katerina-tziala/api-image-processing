@@ -19,6 +19,7 @@ async function writeLogsData(data: string): Promise<unknown> {
   try {
     const logsFile = await fsAsync.open(imageLogsPath, 'a+');
     await logsFile.write(data);
+    await logsFile.close();
     return;
   } catch {
     return;

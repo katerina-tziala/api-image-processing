@@ -75,7 +75,7 @@ function checkDimensions(
 }
 
 function imageDimensionValid(value: number | undefined): boolean {
-  if (typeof value !== 'number') {
+  if (!value) {
     return true;
   }
   return MIN_IMAGE_DIMENSION <= value && value <= MAX_IMAGE_DIMENSION;

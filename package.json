@@ -4,12 +4,12 @@
   "description": "An API that resizes and saves images to user specifications when visiting a URL.",
   "main": "index.js",
   "scripts": {
-    "clean-prod": "rimraf dist",
+    "clean": "rimraf dist && rimraf logs && rimraf assets/images/thumb",
     "prettier-check": "prettier --config .prettierrc 'src/**/*.ts' --check",
     "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "eslint . --ext .ts",
     "test": "npm run build && jasmine",
-    "build": "npm run clean-prod && npm run prettier && npx tsc",
+    "build": "npm run clean && npm run prettier && npx tsc",
     "start": "npm build && node dist/.",
     "dev": "nodemon src/index.ts"
   },

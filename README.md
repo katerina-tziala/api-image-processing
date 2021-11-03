@@ -37,7 +37,7 @@ The commands to check the code quality and test the api must be run in the proje
 
 ### Code Quality
 
-The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files. 
+The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files.
 
 To check the code consistensy to the chosen coding style run `npm run prettier-check`.
 
@@ -52,14 +52,14 @@ To test the app run in the project directory `npm run test`.
 ## API Usage
 
 The server is running at http://localhost:3000.  
-When accessing this endpoint, the server responds with status 200 and a message that the server is up and running providing the timestamp that the server started.  
+When accessing this endpoint, the server responds with status 200 and a message that the server is up and running providing the timestamp that the server started.
 
 The API is running at http://localhost:3000/api.  
-When accessing this endpoint, the server responds with status 200 and a message that the API is listening.  
+When accessing this endpoint, the server responds with status 200 and a message that the API is listening.
 
 The images endpoint can be accessed at http://localhost:3000/api/images.
 
-***Query Params***
+**_Query Params_**
 
 | key    | description                                                         |
 | ------ | ------------------------------------------------------------------- |
@@ -70,6 +70,14 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 | flip   | **optional** If requested the image should be flipped horizontally. |
 | flop   | **optional** If requested the image should be flipped vertically.   |
 | rotate | **optional** The rotation angle of the requested image.             |
+
+**_Possible Errors_**
+
+| Error Code                | description                                         |
+| ------------------------- | --------------------------------------------------- |
+| 400 Bad Request           | Required query params were not specified or invalid |
+| 404 Not Found             | Image was not found                                 |
+| 500 Internal Server Error | The image could not be processed                    |
 
 ### NOTES
 
@@ -89,13 +97,17 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
    - For each one of the dimensions, when specified must take values in the range 20 - 3000
 
-***Possible Errors***
+### EXAMPLES
 
-| Error Code                | description                                                         |
-| ------------------------- | ------------------------------------------------------------------- |
-| 400 Bad Request           | Required query params were not specified or invalid                 |
-| 404 Not Found             | Image was not found                                                 |
-| 500 Internal Server Error | The image could not be processed                                    |
+**Example 1**
+http://localhost:3000/api/images?name=santamonica&format=png&width=300&flop=true&rotate=45
+
+Will return a scaled, flipped horizontally and rotated by 45degrees png of the original image.
+
+**Example 2**
+http://localhost:3000/api/images?name=fjord&format=png&width=300&flip=true
+
+Will return a scaled and vertically flipped png of the original image.
 
 ## Future Improvements
 
@@ -104,4 +116,5 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 3. Create a front-end that allows for the selection of how to process a selected image.
 
 ## ATTRIBUTIONS
+
 All images were provided by [Udacity](https://www.udacity.com/) no rights claimed.
