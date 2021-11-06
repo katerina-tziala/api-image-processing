@@ -13,7 +13,7 @@ Node version >= 12.13.0
 
 Here’s a high level list of the technologies used for this app:
 
-- **For development:** [Node.js v16.13.0](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/) and [Sharp](https://www.npmjs.com/package/sharp)
+- **For Development:** [Node.js v16.13.0](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/) and [Sharp](https://www.npmjs.com/package/sharp)
 
 - **For Testing:** [Jasmine](https://www.npmjs.com/package/jasmine)
 
