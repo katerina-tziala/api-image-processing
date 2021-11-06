@@ -104,7 +104,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 **Example 1**  
 http://localhost:3000/api/images?name=santamonica&format=png&width=200&flop=true&rotate=45
 
-Will return a scaled, flipped horizontally and rotated by 45degrees png of the original image.
+Will return a scaled, flipped horizontally and rotated by 45 degrees png of the original image.
 
 <p align="center">
     <img src="https://github.com/katerina-tziala/api-image-processing/blob/master/docs/thumb-santamonica-w200-deg(45)-flop.png" alt="thumb-santamonica-w200-deg(45)-flop" width="auto" height="auto">
