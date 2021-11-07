@@ -1,7 +1,7 @@
 {
   "name": "api-image-processing",
   "version": "1.0.0",
-  "description": "An API that resizes and saves images to user specifications when visiting a URL.",
+  "description": "An API for image processing (resize, rotate, flip, flop and convert the image format)",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist && rimraf logs && rimraf assets/images/thumb",
