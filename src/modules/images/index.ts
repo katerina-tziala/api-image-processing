@@ -71,7 +71,7 @@ export async function generateThumb(
       .toFile(thumbPath);
     writeLogs(thumbPath.replace(THUMBS_PATH, ''), true);
     return thumbPath;
-  } catch (error) {
+  } catch {
     throw new Error('image-could-not-be-processed');
   }
 }
