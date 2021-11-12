@@ -75,7 +75,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
 **_Possible Errors_**
 
-| Error Code                | description                                         |
+| Error Code                | Description                                         |
 | ------------------------- | --------------------------------------------------- |
 | 400 Bad Request           | Required query params were not specified or invalid |
 | 404 Not Found             | Image was not found                                 |
