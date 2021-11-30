@@ -81,7 +81,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 | 404 Not Found             | Image was not found                                 |
 | 500 Internal Server Error | The image could not be processed                    |
 
-### NOTES
+### Notes
 
 1. The available images are:
 
@@ -99,7 +99,7 @@ The images endpoint can be accessed at http://localhost:3000/api/images.
 
    - For each one of the dimensions, when specified must take values in the range 20 - 3000
 
-### EXAMPLES
+### Examples
 
 **Example 1**  
 http://localhost:3000/api/images?name=santamonica&format=png&width=200&flop=true&rotate=45
@@ -126,6 +126,6 @@ Will return a scaled and vertically flipped png of the original image.
 2. Create a front-end that displays a thumbnail directory.
 3. Create a front-end that allows for the selection of how to process a selected image.
 
-## ATTRIBUTIONS
+## Attributions
 
 All images were provided by [Udacity](https://www.udacity.com/) no rights claimed.
