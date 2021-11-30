@@ -25,7 +25,7 @@ Here’s a high level list of the technologies used for this app:
 
 2. To install the dependencies of the app, run in the project directory `npm install` or `npm i`
 
-3. To execute the app:
+3. To run the app:
 
    - in production mode, run in the project directory: `npm run start`
 
