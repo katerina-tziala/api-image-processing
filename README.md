@@ -37,7 +37,7 @@ The commands to check the code quality and test the api must be run in the proje
 
 ### Code Quality
 
-The preferred settings (coding style) of the app can be fount in the .prettierrc and .eslintrc files.
+The preferred settings for the coding style of the app can be fount in the .prettierrc and .eslintrc files.
 
 To check the code consistensy to the chosen coding style run `npm run prettier-check`.
 
