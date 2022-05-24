@@ -122,9 +122,10 @@ Will return a scaled and vertically flipped png of the original image.
 
 ## Future Improvements
 
-1. Create a front-end for uploading more images to the full-size directory.
-2. Create a front-end that displays a thumbnail directory.
-3. Create a front-end that allows for the selection of how to process a selected image.
+1. Add functionality for uploading / deleting images.
+2. Create a front-end for uploading more images to the full-size directory.
+3. Create a front-end that displays a thumbnail directory.
+4. Create a front-end that allows for the selection of how to process a selected image.
 
 ## Attributions
 
