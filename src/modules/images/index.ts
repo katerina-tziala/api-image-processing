@@ -61,6 +61,7 @@ export async function generateThumb(
   const thumbFormat: keyof FormatEnum =
     ImageFormat[format as keyof typeof ImageFormat];
   const background = { r: 0, g: 0, b: 0, alpha: 0 };
+
   try {
     await sharp(srcPath)
       .rotate(rotate, { background })

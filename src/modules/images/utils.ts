@@ -48,11 +48,12 @@ export function generateThumbName(options: ImageOptions): string {
 }
 
 export function getImageOptionsFromQuery(req: Request): ImageOptions {
-  const name = req.query.name as unknown as string;
-  const format = getImageFormat(req.query.format as unknown as string);
-  const width = getDimension(req.query.width as unknown as string);
-  const height = getDimension(req.query.height as unknown as string);
-  const rotate = getRotationDegrees(req.query.rotate as unknown as string);
+  const name = req.query.name as string;
+  const format = getImageFormat(req.query.format as string);
+  const width = getDimension(req.query.width as string);
+  const height = getDimension(req.query.height as string);
+  const rotate = getRotationDegrees(req.query.rotate as string);
+
   return {
     name,
     format,
